@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Med-Manager</string>
+    <string name="title_activity_aa">AAA</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">User Name</string>
+    <string name="nav_header_subtitle">useremail@gmail.com</string>
+    <string name="nav_header_desc">User profile picture</string>
+    <string name="action_search">Search</string>
+    <string name="medications">Medications</string>
+    <string name="analyze">Analyze</string>
+    <string name="settings">Settings</string>
+    <string name="sign_out">Sign out</string>
+    <string name="med_desc">Antibiotics Medication is used to help patients stop diseases.</string>
+    <string name="contact_details">Contact details</string>
+    <string name="health_info">Health info</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save_data">Save Data</string>
+    <string name="name">Name</string>
+    <string name="profession">Profession</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string-array name="blood_groups">
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+    </string-array>
+    <string-array name="genotypes">
+        <item>AA</item>
+        <item>AS</item>
+        <item>AC</item>
+        <item>SS</item>
+        <item>SC</item>
+        <item>CC</item>
+    </string-array>
+</resources>

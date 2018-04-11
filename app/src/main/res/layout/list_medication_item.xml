@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="140dp"
+    android:gravity="center_vertical"
+    android:layout_marginTop="@dimen/dimen_16dp">
+
+    <ImageView
+        android:id="@+id/med_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
+        tools:ignore="ContentDescription"
+        android:src="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/med_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/med_icon"
+        android:ellipsize="end"
+        android:lines="1"
+        tools:text="Antibiotics Medication"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_toRightOf="@id/med_icon"/>
+
+    <TextView
+        android:id="@+id/med_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/med_icon"
+        android:ellipsize="end"
+        android:lines="3"
+        android:layout_below="@id/med_name"
+        tools:text="@string/med_desc"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:textSize="15sp"
+        android:layout_toRightOf="@id/med_icon"/>
+
+    <TextView
+        android:id="@+id/med_interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/med_icon"
+        android:ellipsize="end"
+        android:lines="1"
+        android:padding="@dimen/dimen_8dp"
+        android:layout_below="@id/med_desc"
+        tools:text="Every 12 hours"
+        android:drawableLeft="@android:drawable/ic_menu_recent_history"
+        android:drawableStart="@android:drawable/ic_menu_recent_history"
+        android:gravity="end"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:textSize="15sp"
+        android:layout_toRightOf="@id/med_icon"/>
+
+</RelativeLayout>

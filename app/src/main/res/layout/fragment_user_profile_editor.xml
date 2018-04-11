@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dimen_16dp"
+            android:paddingEnd="@dimen/dimen_16dp"
+            android:paddingRight="@dimen/dimen_16dp"
+            android:paddingLeft="@dimen/dimen_16dp"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <!-- Name -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editor_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/name"
+                    android:inputType="text"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Name -->
+
+            <!-- Profession -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editor_profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/profession"
+                    android:inputType="text"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Profession -->
+
+            <!-- Phone -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editor_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/phone"
+                    android:inputType="phone"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Phone -->
+
+            <!-- Email -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editor_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Email -->
+
+            <!-- Blood Group -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dimen_8dp"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/editor_blood_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_16dp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Blood Group-->
+
+            <!-- Genotype -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:padding="@dimen/dimen_8dp"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/editor_genotype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_16dp"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Genotype -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
