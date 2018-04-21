@@ -2,12 +2,13 @@ package com.ikechukwuakalu.med_manager.data.local;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Medication {
 
-    @PrimaryKey private int id;
+    @PrimaryKey(autoGenerate = true) private int id;
     @ColumnInfo(name = "name") private String name;
     @ColumnInfo(name = "start_date") private long startDate;
     @ColumnInfo(name = "end_date") private long endDate;
@@ -16,6 +17,15 @@ public class Medication {
     @ColumnInfo(name = "created_at") private long createdAt;
 
     Medication() {}
+
+    @Ignore
+    public Medication(String name, long startDate, long endDate, String interval, String description) {
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.interval = interval;
+        this.description = description;
+    }
 
     public int getId() {
         return id;

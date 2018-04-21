@@ -24,11 +24,12 @@ import android.widget.TextView;
 import com.ikechukwuakalu.med_manager.R;
 import com.ikechukwuakalu.med_manager.auth.AuthActivity;
 import com.ikechukwuakalu.med_manager.base.BaseFragment;
+import com.ikechukwuakalu.med_manager.createmed.CreateMedicationActivity;
 import com.ikechukwuakalu.med_manager.data.local.Medication;
 import com.ikechukwuakalu.med_manager.data.models.User;
 import com.ikechukwuakalu.med_manager.di.scopes.ActivityScoped;
+import com.ikechukwuakalu.med_manager.medicationdetails.MedicationDetailsActivity;
 import com.ikechukwuakalu.med_manager.user_profile.UserProfileActivity;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -124,12 +125,10 @@ public class MedicationsFragment extends BaseFragment implements MedicationsCont
         return drawer;
     }
 
-    /**
-     * TODO("Handle FAB to create new medication")
-     */
     @OnClick(R.id.add_new_med)
     public void addNewMedication() {
-
+        Intent intent = new Intent(getActivity(), CreateMedicationActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -154,10 +153,7 @@ public class MedicationsFragment extends BaseFragment implements MedicationsCont
     @Override
     public void showUserDetails(User user) {
         if (user.getPhotoUri() != null) {
-            Picasso.get()
-                    .load(user.getPhotoUri())
-                    .placeholder(R.drawable.ic_account_box_black)
-                    .into(navPhoto);
+
         }
         navHeaderText.setText(user.getName());
         navHeaderSubtext.setText(user.getEmail());
@@ -165,7 +161,15 @@ public class MedicationsFragment extends BaseFragment implements MedicationsCont
 
     @Override
     public void showMedications(List<Medication> medications) {
-        MedicationsAdapter adapter = new MedicationsAdapter(medications, getContext());
+        MedicationsAdapter adapter = new MedicationsAdapter(medications, getContext(),
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), MedicationDetailsActivity.class);
+                        intent.putExtra(MedicationDetailsActivity.MEDICATION_ID, v.getTag().toString());
+                        startActivity(intent);
+                    }
+                });
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         medicationsList.setLayoutManager(llm);
         medicationsList.setAdapter(adapter);
@@ -174,6 +178,11 @@ public class MedicationsFragment extends BaseFragment implements MedicationsCont
     @Override
     public void showNoMedicationFound() {
         showLongToast(getContext(), "No medication found");
+    }
+
+    @Override
+    public void showErrorLoadingMedications(String message) {
+        showLongToast(getContext(), message);
     }
 
     @Override

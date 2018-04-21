@@ -24,6 +24,6 @@ public class UserProfileActivity extends BaseAppCompatActivity {
     }
 
     public void showEditorFragment() {
-        replaceFragment(editorFragment, R.id.user_profile_container);
+        replaceFragment(editorFragment, R.id.user_profile_container, null);
     }
 }

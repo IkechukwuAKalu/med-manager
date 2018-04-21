@@ -11,7 +11,7 @@
     <string name="analyze">Analyze</string>
     <string name="settings">Settings</string>
     <string name="sign_out">Sign out</string>
-    <string name="med_desc">Antibiotics Medication is used to help patients stop diseases.</string>
+    <string name="med_desc">Antibiotics Medication is used to help patients stop diseases. This also helps people be healthy and fine and healthy again :-)</string>
     <string name="contact_details">Contact details</string>
     <string name="health_info">Health info</string>
     <string name="edit_profile">Edit Profile</string>
@@ -20,13 +20,27 @@
     <string name="profession">Profession</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
+    <string name="genotype">Genotype</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="medication_name">Medication name</string>
+    <string name="description">Description</string>
+    <string name="interval_eg_12_30">Interval (eg. 12,30 for 12hrs, 30mins)</string>
+    <string name="hyphen">-</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="add">Add</string>
+    <string name="interval_tooltip_text">This is the amount of time between medication intakes. Example: 12,30 which means 12 hours, 30 minutes</string>
+    <string name="next_time">NEXT TIME</string>
+    <string name="interval">interval</string>
     <string-array name="blood_groups">
+        <item> - </item>
         <item>A</item>
         <item>B</item>
         <item>O</item>
         <item>AB</item>
     </string-array>
     <string-array name="genotypes">
+        <item> - </item>
         <item>AA</item>
         <item>AS</item>
         <item>AC</item>

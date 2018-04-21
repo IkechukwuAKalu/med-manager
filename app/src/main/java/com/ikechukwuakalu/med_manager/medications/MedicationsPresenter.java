@@ -46,14 +46,9 @@ public class MedicationsPresenter implements MedicationsContract.Presenter{
     @Override
     public void attach(MedicationsContract.View view) {
         this.view = view;
-        checkUserSignedIn();
-        fetchUserDetails();
-    }
 
-    private void checkUserSignedIn() {
-        if (! spHelper.isUserSignedIn()) {
-            view.showAuthScreen();
-        }
+        if (! spHelper.isUserSignedIn()) view.showAuthScreen();
+        else fetchUserDetails();
     }
 
     @Override
@@ -100,7 +95,7 @@ public class MedicationsPresenter implements MedicationsContract.Presenter{
                 })
                 .subscribe(new Consumer<List<Medication>>() {
                     @Override
-                    public void accept(List<Medication> medications) throws Exception {
+                    public void accept(List<Medication> medications) {
                         if (view != null) {
                             if (medications.size() > 0) view.showMedications(medications);
                             else view.showNoMedicationFound();
@@ -108,8 +103,9 @@ public class MedicationsPresenter implements MedicationsContract.Presenter{
                     }
                 }, new Consumer<Throwable>() {
                     @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        Logger.error(throwable.getMessage(), true);
+                    public void accept(Throwable throwable) {
+                        Logger.error(throwable.getMessage());
+                        if (view != null) view.showErrorLoadingMedications(throwable.getMessage());
                     }
                 });
         disposables.add(disposable);

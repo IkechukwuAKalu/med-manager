@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen_8dp"
                     android:hint="@string/name"
-                    android:inputType="text"
+                    android:inputType="textPersonName"
                     android:padding="@dimen/dimen_16dp"
                     android:textSize="@dimen/text_size_18sp" />
             </android.support.design.widget.TextInputLayout>
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen_8dp"
                     android:hint="@string/profession"
-                    android:inputType="text"
+                    android:inputType="textCapSentences"
                     android:padding="@dimen/dimen_16dp"
                     android:textSize="@dimen/text_size_18sp" />
             </android.support.design.widget.TextInputLayout>
@@ -91,10 +91,18 @@
             <!-- End of Email -->
 
             <!-- Blood Group -->
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_8dp"
-                android:layout_height="wrap_content">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blood_group"
+                    android:textSize="@dimen/text_size_18sp"/>
 
                 <Spinner
                     android:id="@+id/editor_blood_group"
@@ -102,14 +110,22 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/dimen_16dp"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
-            </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
             <!-- End of Blood Group-->
 
             <!-- Genotype -->
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="@dimen/dimen_8dp"
-                android:layout_height="wrap_content">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/genotype"
+                    android:textSize="@dimen/text_size_18sp"/>
 
                 <Spinner
                     android:id="@+id/editor_genotype"
@@ -117,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/dimen_16dp"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
-            </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
             <!-- End of Genotype -->
 
         </LinearLayout>

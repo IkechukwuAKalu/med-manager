@@ -53,10 +53,6 @@ public class AuthPresenter implements AuthContract.Presenter {
                 photoUrl);
         spHelper.signInUser(user);
 
-        showSignInSuccess();
-    }
-
-    private void showSignInSuccess() {
         if (view != null) {
             view.showSignInSuccess();
         }
@@ -75,7 +71,7 @@ public class AuthPresenter implements AuthContract.Presenter {
             GoogleSignInAccount account = task.getResult(ApiException.class);
             saveUserDetails(account);
         } catch (ApiException e) {
-            Logger.error(e.getMessage(), true);
+            Logger.error(e.getMessage());
             if (view != null) {
                 view.showSignInFailure("Unable to sign in; code:" + e.getStatusCode());
             }

@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ikechukwuakalu.med_manager.R;
@@ -21,12 +20,12 @@ public class MedicationsAdapter extends RecyclerView.Adapter<MedicationsAdapter.
 
     private List<Medication> medications;
     private LayoutInflater inflater;
-    private Context context;
+    private View.OnClickListener onClickListener;
 
-    MedicationsAdapter(List<Medication> medications, Context context) {
+    MedicationsAdapter(List<Medication> medications, Context context, View.OnClickListener onClickListener) {
         inflater = LayoutInflater.from(context);
-        this.context = context;
         this.medications = medications;
+        this.onClickListener = onClickListener;
     }
 
     @NonNull
@@ -49,7 +48,7 @@ public class MedicationsAdapter extends RecyclerView.Adapter<MedicationsAdapter.
 
     class MedicationsViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.med_icon) ImageView medIcon;
+        @BindView(R.id.med_icon_text) TextView medIcon;
         @BindView(R.id.med_name) TextView medName;
         @BindView(R.id.med_desc) TextView medDescription;
         @BindView(R.id.med_interval) TextView medInterval;
@@ -58,6 +57,7 @@ public class MedicationsAdapter extends RecyclerView.Adapter<MedicationsAdapter.
             super(itemView);
             // Initialize Butter knife
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(onClickListener);
         }
 
         /**
@@ -65,12 +65,28 @@ public class MedicationsAdapter extends RecyclerView.Adapter<MedicationsAdapter.
          * @param medication the Medication Object
          */
         void bind(Medication medication) {
-            medIcon.setImageDrawable(context.getResources()
-                    .getDrawable(R.drawable.ic_launcher_background)
-            );
+            itemView.setTag(medication.getId()); // for use in OnClickListener
+
+            String firstChar = medication.getName().isEmpty() ?
+                    "A" : medication.getName().toUpperCase().substring(0, 1);
+            medIcon.setText(firstChar);
             medName.setText(medication.getName());
             medDescription.setText(medication.getDescription());
-            medInterval.setText(medication.getInterval());
+            String interval = getIntervalText(medication.getInterval());
+            medInterval.setText(interval);
+
+
+        }
+
+        private String getIntervalText(String interval) {
+            if (interval.contains(",")) {
+                // format is 12,45
+                String[] args = interval.split(",");
+                return "Every " + args[0] + " hours, " + args[1] + " minutes";
+            } else {
+                // format is 12
+                return "Every " + interval + " hours";
+            }
         }
     }
 }

@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="#EEEEEE">
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="#EEEEEE"
+    android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
 
@@ -19,13 +20,12 @@
             android:orientation="vertical"
             android:paddingTop="32dp">
 
-            <ImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/user_photo"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher"
-                tools:ignore="ContentDescription" />
+                fresco:placeholderImage="@drawable/ic_menu_camera" />
 
             <TextView
                 android:id="@+id/user_name"

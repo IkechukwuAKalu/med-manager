@@ -13,7 +13,6 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/medication_items"
-            android:padding="@dimen/dimen_16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -24,6 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@drawable/ic_add_white" />
 
 </android.support.design.widget.CoordinatorLayout>

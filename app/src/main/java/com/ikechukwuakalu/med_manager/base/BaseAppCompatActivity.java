@@ -15,8 +15,6 @@ import dagger.android.support.DaggerAppCompatActivity;
 @SuppressLint("Registered")
 public class BaseAppCompatActivity extends DaggerAppCompatActivity{
 
-    protected static final String USER_PROFILE_TAG = "user_profile_tag";
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +31,13 @@ public class BaseAppCompatActivity extends DaggerAppCompatActivity{
     protected void addFragment(Fragment fragment, int fragmentId) {
         getSupportFragmentManager().beginTransaction()
                 .add(fragmentId, fragment)
-                .addToBackStack(USER_PROFILE_TAG)
                 .commit();
     }
 
-    protected void replaceFragment(Fragment fragment, int fragmentId) {
+    protected void replaceFragment(Fragment fragment, int fragmentId, String tag) {
         getSupportFragmentManager().beginTransaction()
                 .replace(fragmentId, fragment)
+                .addToBackStack(tag)
                 .commit();
     }
 

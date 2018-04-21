@@ -87,7 +87,6 @@ public class AuthFragment extends BaseFragment implements AuthContract.View {
 
     @Override
     public void showSignInSuccess() {
-        showShortToast(getContext(), "Sign in successful");
         Intent intent = new Intent(getActivity(), MedicationsActivity.class);
         startActivity(intent);
         Activity activity = getActivity();

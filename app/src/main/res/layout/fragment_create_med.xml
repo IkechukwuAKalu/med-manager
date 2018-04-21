@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <!-- Name -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/med_creator_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/medication_name"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Name -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Start -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/med_creator_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_8dp"
+                        android:focusable="false"
+                        android:hint="@string/start_date"
+                        android:inputType="none"
+                        android:padding="@dimen/dimen_16dp"
+                        android:textSize="@dimen/text_size_18sp" />
+                </android.support.design.widget.TextInputLayout>
+                <!-- End of Start -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hyphen"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:textStyle="bold"/>
+
+                <!-- End -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/med_creator_end"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_8dp"
+                        android:hint="@string/end_date"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:padding="@dimen/dimen_16dp"
+                        android:textSize="@dimen/text_size_18sp" />
+                </android.support.design.widget.TextInputLayout>
+                <!-- End of End :-) -->
+            </LinearLayout>
+
+            <!-- Interval -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:tooltipText="This is the amount of time between medication intakes. Example: 12,30 which means 12 hours, 30 minutes"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/med_creator_interval"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/interval_eg_12_30"
+                    android:inputType="textCapSentences"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Interval -->
+
+            <!-- Description -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/med_creator_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:hint="@string/description"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:padding="@dimen/dimen_16dp"
+                    android:textSize="@dimen/text_size_18sp" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- End of Description -->
+
+            <Button
+                android:id="@+id/med_creator_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:layout_margin="@dimen/dimen_16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

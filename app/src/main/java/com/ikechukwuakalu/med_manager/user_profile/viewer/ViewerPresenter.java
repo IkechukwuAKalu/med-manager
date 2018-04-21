@@ -13,7 +13,7 @@ public class ViewerPresenter implements ViewerContract.Presenter {
     private UserSharedPreferenceHelper spHelper;
 
     @Inject
-    public ViewerPresenter(UserSharedPreferenceHelper spHelper) {
+    ViewerPresenter(UserSharedPreferenceHelper spHelper) {
         this.spHelper = spHelper;
     }
 

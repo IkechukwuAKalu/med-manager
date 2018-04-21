@@ -24,6 +24,8 @@ public interface MedicationsContract {
         void showNoMedicationFound();
 
         void showMedications(List<Medication> medications);
+
+        void showErrorLoadingMedications(String message);
     }
 
     interface Presenter extends BasePresenter<View> {

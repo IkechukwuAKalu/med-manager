@@ -18,6 +18,9 @@ public interface MedicationDao {
     @Query("SELECT * FROM medication")
     Flowable<List<Medication>> getAll();
 
+    @Query("SELECT * FROM medication WHERE id = :id")
+    Flowable<Medication> getById(int id);
+
 //    @Update
 //    void edit(Medication oldMed, Medication newMed);
 

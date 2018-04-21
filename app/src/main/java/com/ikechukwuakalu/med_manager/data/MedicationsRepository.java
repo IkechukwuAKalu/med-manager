@@ -8,6 +8,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 
 @Singleton
@@ -21,12 +22,12 @@ public class MedicationsRepository implements MedicationsDataSource {
     }
 
     @Override
-    public boolean add(Medication medication) {
+    public Completable add(Medication medication) {
         return localMedDataSource.add(medication);
     }
 
     @Override
-    public Observable<Medication> getMedication(long id) {
+    public Observable<Medication> getMedication(int id) {
         return localMedDataSource.getMedication(id);
     }
 

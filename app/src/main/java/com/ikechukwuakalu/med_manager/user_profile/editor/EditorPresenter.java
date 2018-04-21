@@ -13,7 +13,7 @@ public class EditorPresenter implements EditorContract.Presenter {
     private UserSharedPreferenceHelper spHelper;
 
     @Inject
-    public EditorPresenter(UserSharedPreferenceHelper spHelper) {
+    EditorPresenter(UserSharedPreferenceHelper spHelper) {
         this.spHelper = spHelper;
     }
 

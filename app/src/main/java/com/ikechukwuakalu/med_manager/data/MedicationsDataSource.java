@@ -4,6 +4,7 @@ import com.ikechukwuakalu.med_manager.data.local.Medication;
 
 import java.util.List;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 
 public interface MedicationsDataSource {
@@ -13,14 +14,14 @@ public interface MedicationsDataSource {
      * @param medication the Medication Object
      * @return true if it was successful, else false
      */
-    boolean add(Medication medication);
+    Completable add(Medication medication);
 
     /**
      * Fetches Medications by ID
      * @param id the Medication id
      * @return the Medication Object if found, else null
      */
-    Observable<Medication> getMedication(long id);
+    Observable<Medication> getMedication(int id);
 
     /**
      * Fetches all Medications

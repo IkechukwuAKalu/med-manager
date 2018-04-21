@@ -7,7 +7,9 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import io.reactivex.Completable;
 import io.reactivex.Observable;
+import io.reactivex.functions.Action;
 
 @Singleton
 public class LocalMedicationsDataSource implements MedicationsDataSource {
@@ -20,19 +22,25 @@ public class LocalMedicationsDataSource implements MedicationsDataSource {
     }
 
     @Override
-    public boolean add(Medication medication) {
-        medicationDao.add(medication);
-        return true;
+    public Completable add(final Medication medication) {
+        return Completable.fromAction(new Action() {
+            @Override
+            public void run() {
+                medicationDao.add(medication);
+            }
+        });
     }
 
     @Override
-    public Observable<Medication> getMedication(long id) {
-        return null;
+    public Observable<Medication> getMedication(int id) {
+        return medicationDao.getById(id)
+                .toObservable();
     }
 
     @Override
     public Observable<List<Medication>> getMedications() {
-        return medicationDao.getAll().toObservable();
+        return medicationDao.getAll()
+                .toObservable();
     }
 
     @Override

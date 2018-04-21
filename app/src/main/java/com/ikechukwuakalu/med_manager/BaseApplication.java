@@ -1,5 +1,6 @@
 package com.ikechukwuakalu.med_manager;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.ikechukwuakalu.med_manager.di.AppComponent;
 import com.ikechukwuakalu.med_manager.di.DaggerAppComponent;
 import com.squareup.leakcanary.LeakCanary;
@@ -24,6 +25,7 @@ public class BaseApplication extends DaggerApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fresco.initialize(this);
         installLeakCanary();
     }
 

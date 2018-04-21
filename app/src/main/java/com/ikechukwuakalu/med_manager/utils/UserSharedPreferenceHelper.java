@@ -2,6 +2,7 @@ package com.ikechukwuakalu.med_manager.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 
 import com.ikechukwuakalu.med_manager.data.models.User;
 
@@ -38,7 +39,7 @@ public class UserSharedPreferenceHelper {
         editor.apply();
     }
 
-    private void addUserDetails(User user, SharedPreferences.Editor editor) {
+    private void addUserDetails(@NonNull User user, @NonNull SharedPreferences.Editor editor) {
         editor.putString(USER_ID, user.getId());
         editor.putString(USER_NAME, user.getName());
         editor.putString(USER_PHONE, user.getPhone());
@@ -50,14 +51,14 @@ public class UserSharedPreferenceHelper {
     }
 
     public User getUserDetails() {
-        String id = preferences.getString(USER_ID, null);
-        String name = preferences.getString(USER_NAME, "Add Name");
-        String phone = preferences.getString(USER_PHONE, "None");
-        String email = preferences.getString(USER_EMAIL, "None");
-        String profession = preferences.getString(USER_PROFESSION, "Not set");
-        String bloodGroup = preferences.getString(USER_BLOOD_GROUP, "Not set");
-        String genoType = preferences.getString(USER_GENO_TYPE, "Not set");
-        String photo = preferences.getString(USER_PHOTO, null);
+        String id = preferences.getString(USER_ID, "");
+        String name = preferences.getString(USER_NAME, "");
+        String phone = preferences.getString(USER_PHONE, "");
+        String email = preferences.getString(USER_EMAIL, "");
+        String profession = preferences.getString(USER_PROFESSION, "");
+        String bloodGroup = preferences.getString(USER_BLOOD_GROUP, "");
+        String genoType = preferences.getString(USER_GENO_TYPE, "");
+        String photo = preferences.getString(USER_PHOTO, "");
 
         return new User(id, name, phone, email, profession, bloodGroup, genoType, photo);
     }
